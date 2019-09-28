@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Not Authorized</title>
+        <style>
+		#h01{display:inline;
+float:left;}
+		#h02{display:inline;
+float:right;}
+		#h03{display:inline;
+float:center;}
+
+</style>
+</head>
+<body>
+
+<h1 id="h01">Project Item Catalog</h1>
+
+
+{%if status==False%}
+<a href = "{{url_for('show_login')}}"><button id="h02">Login</button></a>
+
+{%endif%}
+
+{%if status==True%}
+<a href = "{{url_for('gdisconnect')}}" methods="post"><button id="h02">Logout</button></a>
+{%endif%}
+
+<br><br><br><br><p>You are not authorized to perform this operation.</p>
+
+<a href="{{url_for('show_categories')}}">Home</a>
+
+</body>
+</html>

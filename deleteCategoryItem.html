@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Item</title>
+</head>
+<body>
+<h1 id="h01">Project Item Catalog</h1>
+
+
+{%if status==False%}
+<a href = "{{url_for('show_login')}}"><button id="h02">Login</button></a>
+
+{%endif%}
+
+{%if status==True%}
+<a href = "{{url_for('gdisconnect')}}" methods="post"><button id="h02">Logout</button></a>
+{%endif%}
+
+
+
+    <br><br>
+<p>Are you sure want to delete category Item : {{item.name}}</p>
+
+<form action="#" method="post">
+    <input type = "submit" value = 'Yes'>
+</form>
+<a href = "{{url_for('show_categories')}}"> No </a>
+
+</body>
+</html>

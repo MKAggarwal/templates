@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Item</title>
+        	    <style>
+		#h01{display:inline;
+float:left;}
+		#h02{display:inline;
+float:right;}
+		#h03{display:inline;
+float:center;}
+
+</style>
+</head>
+<body>
+<h1 id="h01">Project Item Catalog</h1>
+
+
+{%if status==False%}
+<a href = "{{url_for('show_login')}}"><button id="h02">Login</button></a>
+
+{%endif%}
+
+{%if status==True%}
+<a href = "{{url_for('gdisconnect')}}" methods="post"><button id="h02">Logout</button></a>
+{%endif%}
+
+<br><br><br><br>
+
+<h3> Edit Item </h3>
+<p>Item name: {{item.name}} </p>
+<p>Item Description : {{item.description}}</P>
+<p> Enter New Descripion </p>
+<form action="{{url_for('edit_category_item',item_id=item.item_id)}}" method="post">
+    <input type="text" size="250" name="description" required>
+    <input type="submit" value="Update Description">
+</form>
+
+
+</body>
+</html>
